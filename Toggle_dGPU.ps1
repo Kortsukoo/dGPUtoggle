@@ -9,7 +9,7 @@ Break
 
 
 
-# Checks dGPU state and either enables or disables it.
+# Checks dGPU state and either enables or disables it. Use Get-PnpDevice to find your GPU and just change NVIDIA GeForce GTX 1060 to your GPU to make it work for you.
 
 if (Get-PnpDevice | where {$_.friendlyname -like "NVIDIA GeForce GTX 1060*" -and $_.Status -eq "Error"}) {
 Get-PnpDevice| where {$_.friendlyname -like "NVIDIA GeForce GTX 1060 with Max-Q Design*"} | Enable-PnpDevice -Confirm:$false
