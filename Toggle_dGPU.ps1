@@ -11,7 +11,7 @@ Break
 
 # Checks dGPU state and either enables or disables it.
 
-if (Get-PnpDevice | where {$_.friendlyname -like "NVIDIA*" -and $_.Status -eq "Error"}) {
+if (Get-PnpDevice | where {$_.friendlyname -like "NVIDIA GeForce GTX 1060*" -and $_.Status -eq "Error"}) {
 Get-PnpDevice| where {$_.friendlyname -like "NVIDIA GeForce GTX 1060 with Max-Q Design*"} | Enable-PnpDevice -Confirm:$false
 }
-else {Get-PnpDevice| where {$_.friendlyname -like "NVIDIA GeForce GTX 1060 with Max-Q Design*"} | Disable-PnpDevice -Confirm:$false}
+else {Get-PnpDevice| where {$_.friendlyname -like "NVIDIA GeForce GTX 1060*"} | Disable-PnpDevice -Confirm:$false}
